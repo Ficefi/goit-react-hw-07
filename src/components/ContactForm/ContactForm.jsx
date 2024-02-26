@@ -3,7 +3,7 @@ import { BsFillPersonPlusFill } from "react-icons/bs";
 import { nanoid } from "nanoid";
 import { useId } from "react";
 import { useDispatch } from "react-redux";
-import { addToList } from "../../redux/contactSlice";
+import { addToList } from "../../redux/operations";
 import * as Yup from "yup";
 import css from "./ContactForm.module.css";
 
@@ -18,8 +18,8 @@ const userSchema = Yup.object().shape({
       /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/,
       "It`s must be a phone number"
     )
-    .min(7, "Number must be a 7 symb")
-    .max(7, "Number must be a 7 symb")
+    .min(10, "Number must be a 10 symb")
+    .max(10, "Number must be a 10 symb")
     .required("This is a required field"),
 });
 
